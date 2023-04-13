@@ -1,0 +1,74 @@
+version: '2'
+services:
+  nginx:
+    container_name: nginx
+    image: tamimhemat/micronginx:nginx
+    ports:
+      - 80:80
+  dashboard:
+    container_name: dashboard
+    image: tamimhemat/microdashboard:dashboard
+    ports:
+      - 3000:3000
+    depends_on:
+      - nginx
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 22181:2181
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=tamimmysql
+    volumes:
+      - data:/var/lib/mysql
+  receiver:
+    container_name: receiver
+    image: tamimhemat/receiver:receiverapp
+    ports:
+      - 8080:8080
+    depends_on:
+      - kafka
+  storage:
+    container_name: storage
+    image: tamimhemat/storage:storageapp
+    ports: 
+      - 8090:8090
+    depends_on:
+      - kafka
+      - mysql
+  processing:
+    container_name: processing
+    image: tamimhemat/processing:processingapp
+    ports:
+      - 8100:8100
+    depends_on:
+      - storage
+  health:
+    container_name: health
+    image: tamimhemat/health:healthapp
+    ports:
+      - 8110:8110
+    depends_on:
+      - receiver
+      - storage
+      - processing
+volumes:
+  data:

@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  description: This API generates stats for buy and sell events
+  version: "1.0.0"
+  title: ACIT 3855 API
+  contact:
+    email: <your email address>
+tags:
+  - name: devices
+    description: Operations available to connected devices
+paths:
+  /stats:
+    get:
+      tags:
+        - devices
+      summary: Reports the latest statistics
+      operationId: app.get_latest_stats
+      description: Returns the latest statistics
+      responses:
+        '200':
+          description: Successfully returned the latest statistic
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Stat'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /health:
+    get:
+      tags:
+        - devices
+      summary: Returns 200
+      operationId: app.health
+      description: Returns 200
+      responses:
+        '200':
+          description: Returned status
+components:
+  schemas:
+    Stat:
+      type: object
+      required:
+        - max_buy_price
+        - num_buys
+        - max_sell_price
+        - num_sells
+        - last_updated
+      properties:
+        max_buy_price:
+          type: number
+          example: 19.99
+        num_buys:
+          type: integer
+          example: 10
+        max_sell_price:
+          type: number
+          example: 19.99
+        num_sells:
+          type: integer
+          example: 10
+        last_updated:
+          type: string
+          format: date

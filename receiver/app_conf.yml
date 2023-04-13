@@ -1,0 +1,11 @@
+version: 1
+buy:
+  url: http://localhost:8090/buy
+sell:
+  url: http://localhost:8090/sell
+events:
+  # hostname: host.docker.internal
+  hostname: kafka
+  # port: 29092
+  port: 9092
+  topic: events

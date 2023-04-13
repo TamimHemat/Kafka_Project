@@ -1,0 +1,25 @@
+version: 1
+formatters:
+  c:
+    format: "\x1b[1;32;20mRECEIVER :: DEBUG \x1b[0m%(message)s"
+  f: 
+    format: "RECEIVER :: DEBUG – %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: c
+    stream: ext://sys.stdout
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: f
+    filename: app.log
+loggers:
+  basic:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console]

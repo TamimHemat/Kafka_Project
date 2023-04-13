@@ -1,0 +1,2 @@
+@Library('ci_functions_3855') _
+python_build('processing', 'processing', 'processingapp')

@@ -1,0 +1,5 @@
+connexion
+swagger-ui-bundle
+pykafka
+Flask
+flask_cors

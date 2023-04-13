@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  description: This API receives buy and sell events
+  version: "1.0.0"
+  title: ACIT 3855 API
+  contact:
+    email: <your email address>
+tags:
+  - name: devices
+    description: Operations available to connected devices
+paths:
+  /check:
+    get:
+      tags:
+        - devices
+      summary: Returns statuses of services
+      operationId: app.check
+      description: Returns status
+      responses:
+        '200':
+          description: Returned status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  receiver:
+                    type: string
+                  storage:
+                    type: string
+                  processing:
+                    type: string

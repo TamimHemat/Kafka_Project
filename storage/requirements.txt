@@ -1,0 +1,9 @@
+connexion
+swagger-ui-bundle
+SQLAlchemy
+mysql-connector-python
+pymysql
+pykafka
+flask
+cryptography
+flask_cors

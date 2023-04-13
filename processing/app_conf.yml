@@ -1,0 +1,5 @@
+version: 1
+filename: stats.sqlite
+period: 5
+sell_url: http://localhost:8090/sell
+buy_url: http://localhost:8090/buy

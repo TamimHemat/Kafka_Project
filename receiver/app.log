@@ -1,0 +1,32 @@
+RECEIVER :: DEBUG – Received buy event with trace id f5ad6769-09c0-401f-bd50-493c30207aa0
+RECEIVER :: DEBUG – Received buy event with trace id 6d4c3f8f-4da3-4589-af44-b962160bfc31
+RECEIVER :: DEBUG – PRODUCER::producing buy event
+RECEIVER :: DEBUG – {"type": "buy", "datetime": "2023-02-23T14:39:04Z", "payload": {"buy_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "buy_qty": 1, "item_name": "Fish", "item_price": 9.99, "trace_id": "6d4c3f8f-4da3-4589-af44-b962160bfc31"}}
+RECEIVER :: DEBUG – Received buy event with trace id 57098679-dd9e-4043-b435-e9b3cac8eb5b
+RECEIVER :: DEBUG – PRODUCER::producing buy event
+RECEIVER :: DEBUG – {"type": "buy", "datetime": "2023-03-22T20:18:57Z", "payload": {"buy_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "buy_qty": 1, "item_name": "Item 1", "item_price": 19.99, "trace_id": "57098679-dd9e-4043-b435-e9b3cac8eb5b"}}
+RECEIVER :: DEBUG – Received sell event with trace id bbd79b5c-9552-4c6b-9ec7-543caf8c0373
+RECEIVER :: DEBUG – Received sell event with trace id 15d920e3-a1aa-448e-a95d-518b5f009127
+RECEIVER :: DEBUG – PRODUCER::producing sell event
+RECEIVER :: DEBUG – {"type": "sell", "datetime": "2023-03-22T20:27:29Z", "payload": {"item_name": "Item 1", "item_price": 19.99, "sell_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "sell_qty": 1, "trace_id": "15d920e3-a1aa-448e-a95d-518b5f009127"}}
+RECEIVER :: DEBUG – Received sell event with trace id 55ffcab0-72ed-4a4c-a5f6-8ca1ad3eb8df
+RECEIVER :: DEBUG – PRODUCER::producing sell event
+RECEIVER :: DEBUG – {"type": "sell", "datetime": "2023-03-22T20:32:08Z", "payload": {"item_name": "Item 1", "item_price": 19.99, "sell_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "sell_qty": 1, "trace_id": "55ffcab0-72ed-4a4c-a5f6-8ca1ad3eb8df"}}
+RECEIVER :: DEBUG – Received buy event with trace id 7211925f-5013-4f5f-b2e7-16b9a2f4321d
+RECEIVER :: DEBUG – PRODUCER::producing buy event
+RECEIVER :: DEBUG – {"type": "buy", "datetime": "2023-03-22T23:24:55Z", "payload": {"buy_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "buy_qty": 1, "item_name": "Item 1", "item_price": 19.99, "trace_id": "7211925f-5013-4f5f-b2e7-16b9a2f4321d"}}
+RECEIVER :: DEBUG – Received sell event with trace id 0e736a51-39f5-4a8f-bcfb-367e8a4f12df
+RECEIVER :: DEBUG – PRODUCER::producing sell event
+RECEIVER :: DEBUG – {"type": "sell", "datetime": "2023-03-22T23:25:08Z", "payload": {"item_name": "Item 1", "item_price": 19.99, "sell_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "sell_qty": 1, "trace_id": "0e736a51-39f5-4a8f-bcfb-367e8a4f12df"}}
+RECEIVER :: DEBUG – Received buy event with trace id b3c2eb4d-ffe2-48ae-993e-1c2690bddf83
+RECEIVER :: DEBUG – PRODUCER::producing buy event
+RECEIVER :: DEBUG – {"type": "buy", "datetime": "2023-03-22T23:42:22Z", "payload": {"buy_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "buy_qty": 1, "item_name": "Item 1", "item_price": 19.99, "trace_id": "b3c2eb4d-ffe2-48ae-993e-1c2690bddf83"}}
+RECEIVER :: DEBUG – Received buy event with trace id c299f1ee-1828-4df5-b349-fedc812fe810
+RECEIVER :: DEBUG – PRODUCER::producing buy event
+RECEIVER :: DEBUG – {"type": "buy", "datetime": "2023-03-22T23:43:03Z", "payload": {"buy_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "buy_qty": 1, "item_name": "Item 1", "item_price": 19.99, "trace_id": "c299f1ee-1828-4df5-b349-fedc812fe810"}}
+RECEIVER :: DEBUG – Received buy event with trace id d6fc01d3-b90f-4ff6-b948-e71228c893a5
+RECEIVER :: DEBUG – PRODUCER::producing buy event
+RECEIVER :: DEBUG – {"type": "buy", "datetime": "2023-03-22T23:43:54Z", "payload": {"buy_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "buy_qty": 1, "item_name": "Item 1", "item_price": 19.99, "trace_id": "d6fc01d3-b90f-4ff6-b948-e71228c893a5"}}
+RECEIVER :: DEBUG – Received buy event with trace id 0b2690f9-3418-485f-86cf-c9a9ec3d5a18
+RECEIVER :: DEBUG – PRODUCER::producing buy event
+RECEIVER :: DEBUG – {"type": "buy", "datetime": "2023-03-22T23:44:29Z", "payload": {"buy_id": "d290f1ee-6c54-4b01-90e6-d701748f0851", "buy_qty": 1, "item_name": "Item 1", "item_price": 19.99, "trace_id": "0b2690f9-3418-485f-86cf-c9a9ec3d5a18"}}

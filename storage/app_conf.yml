@@ -1,0 +1,12 @@
+version: 1
+user: 'root'
+password: 'tamimmysql'
+hostname: 'mysql'
+port: 3306
+db: 'events'
+events:
+  # hostname: localhost
+  hostname: kafka
+  # port: 29092
+  port: 9092
+  topic: events
