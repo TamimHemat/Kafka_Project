@@ -4,7 +4,7 @@ const Health = () => {
     const [event, setEvent] = useState([])
 
     const getHealth = async () => {
-        await fetch('http://host.docker.internal/health/check')
+        await fetch('http://localhost/health/check')
         .then(res => res.json())
         .then(res => {
             setEvent(res)

@@ -4,7 +4,7 @@ const Stats = () => {
     const [event, setEvent] = useState([])
 
     useEffect(() => {
-        fetch('http://host.docker.internal/processing/stats')
+        fetch('http://localhost/processing/stats')
         .then(res => res.json())
         .then(res => { 
             setEvent(res) 
