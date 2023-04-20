@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const Health = () => {
     const [event, setEvent] = useState([])
@@ -14,13 +14,13 @@ const Health = () => {
     return (
         <div className="health">
             <h2>Click to check servers Health Status</h2>
-	    <button onClick={getHealth}>CHECK HEALTH</button>
+	        <button onClick={getHealth}>CHECK HEALTH</button>
             <div className="statuses">
                 <p>Receiver Status: {event.receiver}</p>
-	        <p>Storage Status: {event.storage}</p>
-	        <p>Processing Status: {event.processing}</p>
+	            <p>Storage Status: {event.storage}</p>
+	            <p>Processing Status: {event.processing}</p>
+	        </div>
 	    </div>
-	</div>
     )
 }
 

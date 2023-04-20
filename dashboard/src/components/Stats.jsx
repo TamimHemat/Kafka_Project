@@ -15,10 +15,10 @@ const Stats = () => {
         <div className="stats">
             <h2>Latest Statistics</h2>
             <div>
-                <p>Max Buy Price: {event.max_buy_price}$</p>
-                {/* output stats here */}
-	    	<p>Max Sell Price: {event.max_sell_price}$</p>
-	        {/* output stats here */}
+                <p className="single-stat">Max Buy Price: {event.max_buy_price}$</p>
+	    	    <p className="single-stat">Max Sell Price: {event.max_sell_price}$</p>
+                <p className="single-stat">Number of Buys: {event.num_buys}</p>
+                <p className="single-stat">Number of Sells: {event.num_sells}</p>
             </div>
         </div>
     )   
