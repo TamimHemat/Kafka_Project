@@ -1,2 +1,3 @@
 dashboard/node_modules/*
 virtual_environment/*
+**/__pycache__/*
