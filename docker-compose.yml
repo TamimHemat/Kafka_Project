@@ -62,7 +62,7 @@ services:
     depends_on:
       - storage
     volumes:
-      - processing_data:/app/stats.sqllite
+      - processing_data:/app
   health:
     container_name: health
     image: tamimhemat/health:healthapp
