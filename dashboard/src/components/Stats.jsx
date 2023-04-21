@@ -14,12 +14,24 @@ const Stats = () => {
     return (
         <div className="stats">
             <h2>Latest Statistics</h2>
-            <div>
-                <p className="single-stat">Max Buy Price: {event.max_buy_price}$</p>
-	    	    <p className="single-stat">Max Sell Price: {event.max_sell_price}$</p>
-                <p className="single-stat">Number of Buys: {event.num_buys}</p>
-                <p className="single-stat">Number of Sells: {event.num_sells}</p>
-            </div>
+            <div className='events-stats-wrapper'>
+                <div className='events-stats'>
+                    <div className='stats-params'>
+                        <p className='stats-param'>Number of Buys:</p>
+                        <p className='stats-param'>Number of Sells:</p>
+                        <p className='stats-param'>Max Buy Price:</p>
+                        <p className='stats-param'>Max Sell Price:</p>
+                        <p className='stats-param'>Last Updated:</p>
+                    </div>
+                    <div className='stats-values'>
+                        <p className='stats-value'>{event.num_buys}</p>
+                        <p className='stats-value'>{event.num_sells}</p>
+                        <p className='stats-value'>{event.max_buy_price}$</p>
+                        <p className='stats-value'>{event.max_sell_price}$</p>
+                        <p className='stats-value'>{event.last_updated}</p>
+                    </div>
+                </div>
+            </div>    
         </div>
     )   
 }

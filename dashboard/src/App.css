@@ -7,9 +7,58 @@
   pointer-events: none;
 }
 
-.single-stat {
-  padding-bottom: 20px;
+.events-stats-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
+
+.events-stats {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.stats-params {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-right: 20px;
+}
+
+.stats-values {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.stats-param {
+  width: 100%;
+  font-size: 1.3em;
+  font-style: solid;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.stats-value {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

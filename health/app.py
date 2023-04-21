@@ -13,19 +13,22 @@ statuses = {
 
 def check():
     try:
-        res1 = requests.get("http://receiver:8080/receiver/health")
+        # res1 = requests.get("http://receiver:8080/receiver/health")
+        res1 = requests.get("http://localhost:8080/receiver/health")
         if res1.status_code == 200:
             statuses["receiver"] = "Running"
     except:
         statuses["receiver"] = "Down"
     try:
-        res2 = requests.get("http://storage:8090/storage/health")
+        # res2 = requests.get("http://storage:8090/storage/health")
+        res2 = requests.get("http://localhost:8090/storage/health")
         if res2.status_code == 200:
             statuses["storage"] = "Running"
     except:
         statuses["storage"] = "Down"
     try:
-        res3 = requests.get("http://processing:8100/processing/health")
+        # res3 = requests.get("http://processing:8100/processing/health")
+        res3 = requests.get("http://localhost:8100/processing/health")
         if res3.status_code == 200:
             statuses["processing"] = "Running"
     except:

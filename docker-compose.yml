@@ -30,6 +30,8 @@ services:
     image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=tamimmysql
+    ports:
+      - 3306:3306
     volumes:
       - mysql_data_new:/var/lib/mysql
 volumes:

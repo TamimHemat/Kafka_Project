@@ -16,9 +16,9 @@ const Health = () => {
             <h2>Click to check servers Health Status</h2>
 	        <button onClick={getHealth}>CHECK HEALTH</button>
             <div className="statuses">
-                <p>Receiver Status: {event.receiver}</p>
-	            <p>Storage Status: {event.storage}</p>
-	            <p>Processing Status: {event.processing}</p>
+                <p className='app-status'>Receiver Status: {event.receiver}</p>
+	            <p className='app-status'>Storage Status: {event.storage}</p>
+	            <p className='app-status'>Processing Status: {event.processing}</p>
 	        </div>
 	    </div>
     )

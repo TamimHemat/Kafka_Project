@@ -42,13 +42,15 @@ def populate_stats():
                 "num_sells": 0,
                 "last_updated": timestamp
             }
-        res = requests.get(f"http://storage:8090/storage/buy?timestamp={last_updated}")
+        # res = requests.get(f"http://storage:8090/storage/buy?timestamp={last_updated}")
+        res = requests.get(f"http://localhost:8090/storage/buy?timestamp={last_updated}")
         res = json.loads(res.text)
         if len(res) > 0:
             for item in res:
                 if item['item_price'] > result["max_buy_price"]:
                     result["max_buy_price"] = item['item_price']
-        res2 = requests.get(f"http://storage:8090/storage/sell?timestamp={last_updated}")
+        # res2 = requests.get(f"http://storage:8090/storage/sell?timestamp={last_updated}")
+        res2 = requests.get(f"http://localhost:8090/storage/sell?timestamp={last_updated}")
         res2 = json.loads(res2.text)
         if len(res2) > 0:
             for item in res2:
@@ -68,19 +70,24 @@ def populate_stats():
                             result["num_sells"], timestamp)
         elif len1 > result["num_buys"] and len2 > result["num_sells"]:
             new_stats = Stats(result["max_buy_price"],
-                                result["num_buys"] + len1,
+                                len1,
                                 result["max_sell_price"],
-                                result["num_sells"] + len2, timestamp)
+                                len2, timestamp)
         elif len1 > result["num_buys"] and len2 == result["num_sells"]:
             new_stats = Stats(result["max_buy_price"],
-                                result["num_buys"] + len1,
+                                len1,
                                 result["max_sell_price"],
                                 result["num_sells"], timestamp)
         elif len1 == result["num_buys"] and len2 > result["num_sells"]:
             new_stats = Stats(result["max_buy_price"],
                                 result["num_buys"],
                                 result["max_sell_price"],
-                                result["num_sells"] + len2, timestamp)            
+                                len2, timestamp)
+        else:
+            new_stats = Stats(result["max_buy_price"],
+                                result["num_buys"],
+                                result["max_sell_price"],
+                                result["num_sells"], timestamp)           
         session.add(new_stats)
     return NoContent, 201
 
