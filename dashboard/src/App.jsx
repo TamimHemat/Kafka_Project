@@ -3,6 +3,7 @@ import React from 'react'
 import Stats from './components/Stats'
 import Health from './components/Health'
 import BackgroundButton from './components/BackgroungButton'
+import Clock from './components/Clock'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Stats />
         <Health />
         <BackgroundButton initial_mode="bg-light"/>
+        <Clock />
       </div>
     </div>
   );

@@ -82,22 +82,25 @@
   padding-bottom: 10px;
 }
 
-.app-statuses {
+.health-button {
+  margin-bottom: 15px;
+}
+
+.app-statuses, .time-passed-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding-top: 15px;
 }
 
-.app-status-label {
+.app-status-label , .time-passed-label {
   border-style: solid;
   margin: 0;
   padding: 6px;
 }
 
-.app-status {
+.app-status , .time-passed {
   border-style: groove;
   margin: 0;
   padding: 2px;

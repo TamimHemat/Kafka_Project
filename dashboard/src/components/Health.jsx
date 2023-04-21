@@ -14,7 +14,7 @@ const Health = () => {
     return (
         <div className="health">
             <h2>Click the button below to check the health status of the servers</h2>
-	        <button onClick={getHealth}>CHECK HEALTH</button>
+	        <button className='health-button' onClick={getHealth}>CHECK HEALTH</button>
             <div className='app-statuses'>
                 <table className="app-statuses-table">
                     <tr>
