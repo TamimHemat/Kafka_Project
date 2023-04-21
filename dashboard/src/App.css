@@ -7,7 +7,29 @@
   pointer-events: none;
 }
 
+.all-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.all-stats-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.individual-stat {
+  width: 61%;
+}
+
 .events-stats-wrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,17 +37,18 @@
 }
 
 .events-stats {
-  width: 60%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   align-content: center;
 }
 
 .stats-params {
   height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,6 +59,7 @@
 
 .stats-values {
   height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +82,27 @@
   padding-bottom: 10px;
 }
 
+.app-statuses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 15px;
+}
 
+.app-status-label {
+  border-style: solid;
+  margin: 0;
+  padding: 6px;
+}
+
+.app-status {
+  border-style: groove;
+  margin: 0;
+  padding: 2px;
+  text-decoration: transparent;
+} 
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -13,13 +13,22 @@ const Health = () => {
 
     return (
         <div className="health">
-            <h2>Click to check servers Health Status</h2>
+            <h2>Click the button below to check the health status of the servers</h2>
 	        <button onClick={getHealth}>CHECK HEALTH</button>
-            <div className="statuses">
-                <p className='app-status'>Receiver Status: {event.receiver}</p>
-	            <p className='app-status'>Storage Status: {event.storage}</p>
-	            <p className='app-status'>Processing Status: {event.processing}</p>
-	        </div>
+            <div className='app-statuses'>
+                <table className="app-statuses-table">
+                    <tr>
+                        <th className='app-status-label'>Receiver Status</th>
+                        <th className='app-status-label'>Storage Status</th>
+                        <th className='app-status-label'>Processing Status</th>
+                    </tr>
+                    <tr>
+                        <td className='app-status'>{event.receiver}</td>
+                        <td className='app-status'>{event.storage}</td>
+                        <td className='app-status'>{event.processing}</td>
+                    </tr>
+                </table>
+            </div>
 	    </div>
     )
 }
