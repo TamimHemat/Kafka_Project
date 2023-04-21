@@ -5,6 +5,13 @@ services:
     image: tamimhemat/micronginx:nginx
     ports:
       - 80:80
+  dashboard:
+    container_name: dashboard
+    image: tamimhemat/microdashboard:dashboard
+    ports:
+      - 3000:3000
+    depends_on:
+      - nginx
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     environment:
@@ -31,6 +38,40 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=tamimmysql
     volumes:
-      - mysql_data_new:/var/lib/mysql
+      - data:/var/lib/mysql
+  receiver:
+    container_name: receiver
+    image: tamimhemat/receiver:receiverapp
+    ports:
+      - 8080:8080
+    depends_on:
+      - kafka
+  storage:
+    container_name: storage
+    image: tamimhemat/storage:storageapp
+    ports: 
+      - 8090:8090
+    depends_on:
+      - kafka
+      - mysql
+  processing:
+    container_name: processing
+    image: tamimhemat/processing:processingapp
+    ports:
+      - 8100:8100
+    depends_on:
+      - storage
+    volumes:
+      - processing_data:/app
+  health:
+    container_name: health
+    image: tamimhemat/health:healthapp
+    ports:
+      - 8110:8110
+    depends_on:
+      - receiver
+      - storage
+      - processing
 volumes:
-  mysql_data_new:
+  data:
+  processing_data:
