@@ -12,9 +12,15 @@ const App = () => {
         <h1>Kafka Project Dashboard</h1>
         <Stats />
         <Health />
-        <BackgroundButton initial_mode="bg-light"/>
-        <Clock />
+        <div className='extra-features-wrapper'>
+          <h2>EXTRA FEATURES</h2>
+          <div className='extra-features'>
+            <BackgroundButton initial_mode="bg-light"/>
+            <Clock />
+          </div>
+        </div>
       </div>
+      <footer className='app-bottom'></footer>
     </div>
   );
 }

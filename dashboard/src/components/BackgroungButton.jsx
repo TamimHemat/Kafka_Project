@@ -13,7 +13,7 @@ const BackgroundButton = (props) => {
 
     return (
         <div className='background-button-wrapper'>
-            <h2>Current background mode: {bg}</h2>
+            <h3>Current background mode: {bg}</h3>
             <div className="background-button">
                 <button onClick={changeBg}>Change Background</button>
             </div>

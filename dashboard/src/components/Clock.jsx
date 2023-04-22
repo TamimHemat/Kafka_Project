@@ -3,6 +3,11 @@ import { useState, useEffect, useRef } from 'react';
 const Clock = () => {
     const [time, setTime] = useState(new Date().toLocaleTimeString());
     const [dayDate, setDayDate] = useState(new Date().toString().split(' ').slice(0, 4).join(' '));
+    const [display, setDisplay] = useState({
+        display: 'none',
+        text: 'Show Time'
+    });
+
     const timePassed = useRef({
         seconds: 0,
         minutes: 0,
@@ -26,31 +31,43 @@ const Clock = () => {
         return () => clearInterval(interval);
     }, []);
 
+    const showTime = () => {
+        if (display.display === 'none') {
+            setDisplay({
+                display: 'block',
+                text: 'Hide Time'
+            });
+        } else {
+            setDisplay({
+                display: 'none',
+                text: 'Show Time'
+            });
+        }
+    }
+
     return (
         <div className='clock'>
-            <h2>Current time: {dayDate} {time}</h2>
+            <div className='clock-button'>
+                <button onClick={showTime}>{display.text}</button>
+            </div>
+            <h3 style={{ display : display.display}}>{dayDate} {time}</h3>
             <h3>Time passed since opening the page: </h3> 
-            {/* <span>
-                {timePassed.current.hours} hours,{' '}
-            </span>
-            <span>
-                {timePassed.current.minutes} minutes,{' '}
-            </span>
-            <span>
-                {timePassed.current.seconds} seconds
-            </span> */}
             <div className='time-passed-wrapper'>
                 <table className="time-passed-table">
-                    <tr>
-                        <th className='time-passed-label'>Hours</th>
-                        <th className='time-passed-label'>Minutes</th>
-                        <th className='time-passed-label'>Seconds</th>
-                    </tr>
-                    <tr>
-                        <td className='time-passed'>{timePassed.current.hours}</td>
-                        <td className='time-passed'>{timePassed.current.minutes}</td>
-                        <td className='time-passed'>{timePassed.current.seconds}</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th className='time-passed-label'>Hours</th>
+                            <th className='time-passed-label'>Minutes</th>
+                            <th className='time-passed-label'>Seconds</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className='time-passed'>{timePassed.current.hours}</td>
+                            <td className='time-passed'>{timePassed.current.minutes}</td>
+                            <td className='time-passed'>{timePassed.current.seconds}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

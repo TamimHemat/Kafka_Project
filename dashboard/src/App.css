@@ -104,8 +104,38 @@
   border-style: groove;
   margin: 0;
   padding: 2px;
-  text-decoration: transparent;
-} 
+}
+
+.extra-features {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.background-button-wrapper {
+  height: 100%;
+  border-style: solid;
+  padding: 15px;
+}
+
+.clock {
+  border-style: solid;
+  padding: 15px;
+}
+
+.extra-features-wrapper {
+  margin-top: 35px;
+  border-style: solid;
+}
+
+.app-bottom {
+  margin-top: 50px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

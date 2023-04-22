@@ -36,7 +36,7 @@ import { useEffect, useState } from 'react'
 //     )   
 // }
 
-const Stats = (props) => {
+const Stat = (props) => {
     const [event, setEvent] = useState([])
     const wanted_stat = props.stat_var
 
@@ -64,4 +64,4 @@ const Stats = (props) => {
     )   
 }
 
-export default Stats
+export default Stat
