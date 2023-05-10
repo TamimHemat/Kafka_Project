@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const BackgroundButton = (props) => {
     const [bg, setBg] = useState([props.initial_mode]);
@@ -6,12 +6,14 @@ const BackgroundButton = (props) => {
     const changeBg = () => {
         if (bg === 'bg-dark') {
             setBg('bg-light');
-            document.getElementById("root").className = bg;
         } else {
             setBg('bg-dark');
-            document.getElementById("root").className = bg;
         }
     };
+
+    useEffect(() => {
+        document.getElementById("root").className = bg;
+    }, [bg]);
 
     return (
         <div className='background-button-wrapper'>
