@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+#root.bg-light {
+  background-color: white;
+  color: black;
+}
+
+#root.bg-dark {
+  background-color: black;
+  color: white;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -134,7 +144,7 @@
 }
 
 .app-bottom {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

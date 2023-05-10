@@ -6,8 +6,10 @@ const BackgroundButton = (props) => {
     const changeBg = () => {
         if (bg === 'bg-dark') {
             setBg('bg-light');
+            document.getElementById("root").className = bg;
         } else {
             setBg('bg-dark');
+            document.getElementById("root").className = bg;
         }
     };
 
